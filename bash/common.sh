@@ -89,9 +89,7 @@ function set_export() {
 }
 
 function test_root() {
-    CURRENT_UID=$(id -u)
-    if ! [ $CURRENT_UID = 0 ]; then
-        echoc debug "UID is $CURRENT_UID"
+    if ! [[ $(id -u) = 0 ]]; then
         echoc error "Permission denied (are you root?)"
         exit $ERROR_NOT_ROOT
     fi
