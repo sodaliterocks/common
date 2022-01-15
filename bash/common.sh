@@ -14,14 +14,6 @@ function echoc() {
             PREFIX="error"
             PREFIX_COLOR="31"
         ;;
-        debug)
-            if [[ $SODALITE_TOOLS_DEBUG == true ]]; then
-                PREFIX="debug"
-                PREFIX_COLOR="33"
-            else
-                MESSAGE=""
-            fi
-        ;;
         *)
             MESSAGE="$TYPE $MESSAGE"
         ;;
@@ -115,5 +107,3 @@ function write_emoji() {
         *) echoc "$emoji" ;;
     esac
 }
-
-set_export SODALITE_TOOLS_DEBUG false
